@@ -1,5 +1,5 @@
 # Knee Rehabilitation Device
-Replace this text with a brief description (2-3 sentences) of your project. This description should draw the reader in and make them interested in what you've built. You can include what the biggest challenges, takeaways, and triumphs from completing the project were. As you complete your portfolio, remember your audience is less familiar than you are with all that your project entails!
+The knee rehabilitation device is useful for ensuring the safety of the knee and preventing irritation by correcting a person's form when doing certain exercises. If incorrect form is detected, it emits a high pitched sound and vibration to notify the person that they are doing the exercise with incorrect form. An arduino setup is necessary as the sensor is needed to detect dangerous movements to have the output be the vibrations.
 
 You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
 ```HTML 
