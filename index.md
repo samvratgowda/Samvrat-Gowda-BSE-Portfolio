@@ -82,7 +82,14 @@ Don't forget to place the link of where to buy each component inside the quotati
 | Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 | Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 
-# Other Resources/Examples
+-->
+# Arduino Starter Project
+
+**<iframe width="560" height="315" src="https://www.youtube.com/embed/_acy2DqKVyI?si=hsduXBcM8xsnrQ3L" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>**
+
+I chose the Arduino starter project to prepare me for the knee rehabilitation device. It takes a button as the input and the two outputs are the green LED and the red LED. When the button is pressed, the red LED flashes and the green LED flashes when it is unpressed. It uses resistors and jumper wires in order the components to work and make up the final result. The pullup resistor allows the power pin to sense wether the button is pressed or unpressed which will determine the path of the current. This ultimately results in one LED flashing and the other not flashing.
+
+<!--# Other Resources/Examples
 One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
 - [Example 1](https://trashytuber.github.io/YimingJiaBlueStamp/)
 - [Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)
