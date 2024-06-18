@@ -102,7 +102,7 @@ I chose the Arduino starter project to prepare me for the knee rehabilitation de
 ![Samvrat Gowda](/docs/assets/Pullup_Resistor.png)
 
 
-# Other Resources/Examples
+<!--# Other Resources/Examples
 One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
 - [Example 1](https://trashytuber.github.io/YimingJiaBlueStamp/)
 - [Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)
