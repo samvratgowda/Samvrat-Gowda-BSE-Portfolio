@@ -13,7 +13,7 @@ You should comment out all portions of your portfolio that you have not complete
 
 
 ![Samvrat Gowda Headshot](Samvrat_G.jpg)
-![Samvrat Gowda](/least-github-pages/docs/assets/Samvrat_G.jpg)
+![Samvrat Gowda](/least-gh-pages/docs/assets/Samvrat_G.jpg)
   
 <!--# Final Milestone
 
