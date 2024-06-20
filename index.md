@@ -46,6 +46,7 @@ For your second milestone, explain what you've worked on since your previous mil
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CaCazFBhYKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+
 My project is the knee rehabilitation device used specifically for squats. The device alerts the user to come up from a squat when their knee is bent 90 degrees. It also alerts the user when their knee is bending inwards during any time of the movement as it can put stress on the knee joints and potentially the hip and ankle.
 
 The device uses a flex sensor which is a variable resistor that increases resistance the more it is bent. By using the known 5V input, it is feasible to write a code that determines the amount of resistance that the flex sensor is inflicting. It is then possible to find the angle of the flex sensor based on the amount of resistance with the aid of some code. When the angle of the flex sensor is greater than 90 degrees, the buzzer goes off which alerts the user to come back up from the squat.
