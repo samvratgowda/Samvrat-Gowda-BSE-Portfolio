@@ -46,7 +46,6 @@ For your second milestone, explain what you've worked on since your previous mil
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CaCazFBhYKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-
 My project is the knee rehabilitation device used specifically for squats. The device alerts the user to come up from a squat when their knee is bent 90 degrees. It also alerts the user when their knee is bending inwards during any time of the movement as it can put stress on the knee joints and potentially the hip and ankle.
 
 The device uses a flex sensor which is a variable resistor that increases resistance the more it is bent. By using the known 5V input, it is feasible to write a code that determines the amount of resistance that the flex sensor is inflicting. It is then possible to find the angle of the flex sensor based on the amount of resistance with the aid of some code. When the angle of the flex sensor is greater than 90 degrees, the buzzer goes off which alerts the user to come back up from the squat.
@@ -55,6 +54,7 @@ I am currently trying to get my bluetooth module to connect to my phone by using
 
 The next step for this project is to use an accelerometer to detect if the knee is bending inwards during the squat. I need to run different trials with different knee positions to determine positions and accelerations that tell if the knee is bending inwards.
 
+<!--
 For your first milestone, describe what your project is and how you plan to build it. You can include:
 - An explanation about the different components of your project and how they will all integrate together
 - Technical progress you've made so far
@@ -79,7 +79,7 @@ void loop() {
 
 }
 ```
-
+-->
 # Bill of Materials
 Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
 Don't forget to place the link of where to buy each component inside the quotation marks in the corresponding row after href =. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize this to your project needs. 
