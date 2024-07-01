@@ -139,7 +139,7 @@ Don't forget to place the link of where to buy each component inside the quotati
 
 I chose the Arduino starter project to prepare me for the knee rehabilitation device. It takes a button as the input and the two outputs are the green LED and the red LED. When the button is pressed, the red LED flashes and the green LED flashes when it is unpressed. It uses resistors and jumper wires in order the components to work and make up the final result. The pullup resistor allows the power pin to sense whether the button is pressed or unpressed which will determine the path of the current. This ultimately results in one LED flashing and the other not flashing.
 
-It is necessary to use a voltage divider to get the LEDs to blink. A voltage divider involves the use of resistors to reduce the voltage in the circuit. The voltage divider is important in the starter project to regulate the amount of voltage the LED is recieving so it does not burn out. The voltage after a voltage divider is given by V<sub>out</sub> = V<sub>in</sub> * R2/(R1 + R2)
+It is necessary to use a voltage divider to get the LEDs to blink. A voltage divider involves the use of resistors to reduce the voltage in the circuit. The voltage divider is important in the starter project to regulate the amount of voltage the LED is recieving so it does not burn out. The voltage after a voltage divider is given by V<sub>out</sub> = V<sub>in</sub> * R2/(R1 + R2).
 
 
 ## How a Pullup Resistor Works (https://en.wikipedia.org/wiki/Pull-up_resistor)
