@@ -65,8 +65,7 @@ For your first milestone, describe what your project is and how you plan to buil
 -->
 ## Schematic 
 ![Samvrat Gowda](/docs/assets/FirstMilestone.png)
-This is a schematic made by Tinkercad of my wiring that uses a flex sensor as an input to trigger a buzzer.
-
+_This is a schematic made by Tinkercad of my wiring that uses a flex sensor as an input to trigger a buzzer._
 
 ## Code
 <!--
