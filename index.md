@@ -4,7 +4,6 @@ The knee rehabilitation device is useful for ensuring the safety of the knee and
 <!--You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:-->
 
 ```HTML 
-
 ```
 
 
