@@ -149,7 +149,7 @@ void loop() {
 
 
 ```
-
+How a Pullup Resistor Works
 
 ![Samvrat Gowda](/docs/assets/Pullup_Resistor.png)
 
