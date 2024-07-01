@@ -1,7 +1,7 @@
 # Knee Rehabilitation Device
 The knee rehabilitation device is useful for ensuring the safety of the knee and preventing irritation by correcting a person's form when doing certain exercises. If incorrect form is detected, it emits a high pitched sound and vibration to notify the person that they are doing the exercise with incorrect form. An arduino setup is necessary as the sensor is needed to detect dangerous movements to have the output be the vibrations.
 
-You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
+<!--You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:-->
 ```HTML 
 <!--- This is an HTML comment in Markdown -->
 <!--- Anything between these symbols will not render on the published site -->
