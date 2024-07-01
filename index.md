@@ -46,11 +46,11 @@ For your second milestone, explain what you've worked on since your previous mil
 
 <iframe width="560" height="315" src="https://www.youtube.com/watch?v=jykKqBEpDyc&list=PLe-u_DjFx7evDJ6N_vX36J16ru7SvHV5m&index=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-My project is the knee rehabilitation device used specifically for squats. The device alerts the user to come up from a squat when their knee is bent 90 degrees. It also alerts the user when their knee is bending inwards during any time of the movement as it can put stress on the knee joints and potentially the hip and ankle.
+My project is a knee rehabilitation device used specifically for squats. The device alerts the user to come up from a squat when their knee is bent 90 degrees. It also alerts the user when their knee is bending inwards during the squat movement as the bending can put stress on the knee joints and potentially the hip and ankle.
 
-The device uses a flex sensor which is a variable resistor that increases resistance the more it is bent. By using the known 5V input, it is feasible to write a code that determines the amount of resistance that the flex sensor is inflicting. It is then possible to find the angle of the flex sensor based on the amount of resistance with the aid of some code. When the angle of the flex sensor is greater than 90 degrees, the buzzer goes off which alerts the user to come back up from the squat.
+The device uses a flex sensor which is a variable resistor that increases resistance the more it is bent. By using the known 5V input, it is feasible to write code that determines the amount of resistance coming from the flex sensor. It is then possible to find the angle of the flex sensor based on the amount of resistance with the aid of some code. When the angle of the flex sensor is greater than 90 degrees, the buzzer goes off which alerts the user to come back up from the squat.
 
-I am currently trying to get my bluetooth module to connect to my phone by using MIT app inventor to control several inputs through my phone. I am facing challenges with the print statements not working when connected to my bluetooth module. Additionally, my phone cannot connect with my bluetooth module which is disabling me from going any further with the mobile app.
+I am currently trying to get my Bluetooth module to connect to my phone by using MIT App Inventor to control several inputs through my phone. I am facing challenges with the print statements not working when connected to my Bluetooth module. Additionally, my phone cannot connect with my Bluetooth module which is hindering me from going any further with the mobile app.
 
 The next step for this project is to use an accelerometer to detect if the knee is bending inwards during the squat. I need to run different trials with different knee positions to determine positions and accelerations that tell if the knee is bending inwards.
 
@@ -62,7 +62,9 @@ For your first milestone, describe what your project is and how you plan to buil
 - What your plan is to complete your project
 -->
 # Schematics 
+This is a schematic made by Tinkercad of my wiring that uses a flex sensor as an input to trigger a buzzer.
 ![Samvrat Gowda](/docs/assets/FirstMilestone.png)
+
 <!--
 # Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
@@ -110,7 +112,7 @@ Don't forget to place the link of where to buy each component inside the quotati
 
 I chose the Arduino starter project to prepare me for the knee rehabilitation device. It takes a button as the input and the two outputs are the green LED and the red LED. When the button is pressed, the red LED flashes and the green LED flashes when it is unpressed. It uses resistors and jumper wires in order the components to work and make up the final result. The pullup resistor allows the power pin to sense whether the button is pressed or unpressed which will determine the path of the current. This ultimately results in one LED flashing and the other not flashing.
 
-Code for Arduino Starter
+##Code for Arduino Starter
 ```c++
 int buttonPin = 2;     // the number of the pushbutton pin
 int greenLedPin = 4;   // the number of the green LED pin
@@ -149,7 +151,7 @@ void loop() {
 
 
 ```
-How a Pullup Resistor Works
+##How a Pullup Resistor Works (https://en.wikipedia.org/wiki/Pull-up_resistor)
 
 ![Samvrat Gowda](/docs/assets/Pullup_Resistor.png)
 
