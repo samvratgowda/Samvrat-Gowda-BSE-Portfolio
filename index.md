@@ -48,7 +48,7 @@ For your second milestone, explain what you've worked on since your previous mil
 
 My project is a knee rehabilitation device used specifically for squats. The device alerts the user to come up from a squat when their knee is bent 90 degrees. It also alerts the user when their knee is bending inwards during the squat movement as the bending can put stress on the knee joints and potentially the hip and ankle.
 
-The device uses a flex sensor which is a variable resistor that increases resistance the more it is bent. By using the known 5V input, it is feasible to write code that determines the amount of resistance coming from the flex sensor. It is then possible to find the angle of the flex sensor based on the amount of resistance with the aid of some code. When the angle of the flex sensor is greater than 90 degrees, the buzzer goes off which alerts the user to come back up from the squat.
+The device uses a flex sensor which is a variable resistor that increases resistance the more it is bent. By using the known 5V input along with a voltage divider, it is feasible to write code that determines the amount of resistance coming from the flex sensor. It is then possible to find the angle of the flex sensor based on the amount of resistance with the aid of some code. When the angle of the flex sensor is greater than 90 degrees, the buzzer goes off which alerts the user to come back up from the squat.
 
 I am currently trying to get my Bluetooth module to connect to my phone by using MIT App Inventor to control several inputs through my phone. I am facing challenges with the print statements not working when connected to my Bluetooth module. Additionally, my phone cannot connect with my Bluetooth module which is hindering me from going any further with the mobile app.
 
@@ -138,6 +138,9 @@ Don't forget to place the link of where to buy each component inside the quotati
 
 
 I chose the Arduino starter project to prepare me for the knee rehabilitation device. It takes a button as the input and the two outputs are the green LED and the red LED. When the button is pressed, the red LED flashes and the green LED flashes when it is unpressed. It uses resistors and jumper wires in order the components to work and make up the final result. The pullup resistor allows the power pin to sense whether the button is pressed or unpressed which will determine the path of the current. This ultimately results in one LED flashing and the other not flashing.
+
+It is necessary to use a voltage divider to get the LEDs to blink. A voltage divider involves the use of resistors to reduce the voltage in the circuit. The voltage divider is important in the starter project to regulate the amount of voltage the LED is recieving so it does not burn out. The voltage after a voltage divider is given by V<sub>out</sub> = V<sub>in</sub> * R2/(R1 + R2)
+
 
 ## How a Pullup Resistor Works (https://en.wikipedia.org/wiki/Pull-up_resistor)
 
