@@ -65,23 +65,51 @@ For your first milestone, describe what your project is and how you plan to buil
 This is a schematic made by Tinkercad of my wiring that uses a flex sensor as an input to trigger a buzzer.
 ![Samvrat Gowda](/docs/assets/FirstMilestone.png)
 
-<!--
+
 # Code
+<!--
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
+-->
 
 ```c++
+const int flexPin = A0;			// Pin connected to voltage divider output
+const int buzzer = 9; //buzzer to arduino pin 9
+unsigned long oldmillis;
+float angle;
+
+// Change these constants according to your project's design
+const float VCC = 5;			// voltage at Ardunio 5V line
+const float R_DIV = 15000.0;	// resistor used to create a voltage divider
+const float flatResistance = 25000.0;	// resistance when flat
+const float bendResistance = 100000.0;	// resistance at 90 deg
+
 void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(9600);
-  Serial.println("Hello World!");
+	Serial.begin(9600);
+	pinMode(flexPin, INPUT);
+  pinMode(buzzer, OUTPUT); // Set buzzer - pin 9 as an output
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
+void loop() { 
+  // Read the ADC, and calculate voltage and resistance from it
+	int ADCflex = analogRead(flexPin);
+	float Vflex = ADCflex * VCC / 1023.0;
+	float Rflex = R_DIV * (VCC / Vflex - 1.0);
+	Serial.println("Resistance: " + String(Rflex) + " ohms");
 
+	// Use the calculated resistance to estimate the sensor's bend angle:
+	float angle = map(Rflex, flatResistance, bendResistance, 0, 90.0);
+	Serial.println("Bend: " + String(angle) + " degrees");
+	Serial.println();
+  delay(1000);
+  
+  // If the flex sensor is bent 90 degrees alert the user to go up
+  if(angle >= 30) {
+    tone(buzzer, 1000);
+  } else {
+    noTone(buzzer);
+  }
 }
 ```
--->
 # Bill of Materials
 <!--
 Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
@@ -111,6 +139,10 @@ Don't forget to place the link of where to buy each component inside the quotati
 
 
 I chose the Arduino starter project to prepare me for the knee rehabilitation device. It takes a button as the input and the two outputs are the green LED and the red LED. When the button is pressed, the red LED flashes and the green LED flashes when it is unpressed. It uses resistors and jumper wires in order the components to work and make up the final result. The pullup resistor allows the power pin to sense whether the button is pressed or unpressed which will determine the path of the current. This ultimately results in one LED flashing and the other not flashing.
+
+## How a Pullup Resistor Works (https://en.wikipedia.org/wiki/Pull-up_resistor)
+
+![Samvrat Gowda](/docs/assets/Pullup_Resistor.png)
 
 ## Code for Arduino Starter
 ```c++
@@ -151,10 +183,6 @@ void loop() {
 
 
 ```
-##How a Pullup Resistor Works (https://en.wikipedia.org/wiki/Pull-up_resistor)
-
-![Samvrat Gowda](/docs/assets/Pullup_Resistor.png)
-
 
 <!--# Other Resources/Examples
 One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
