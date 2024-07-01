@@ -110,6 +110,47 @@ Don't forget to place the link of where to buy each component inside the quotati
 
 I chose the Arduino starter project to prepare me for the knee rehabilitation device. It takes a button as the input and the two outputs are the green LED and the red LED. When the button is pressed, the red LED flashes and the green LED flashes when it is unpressed. It uses resistors and jumper wires in order the components to work and make up the final result. The pullup resistor allows the power pin to sense whether the button is pressed or unpressed which will determine the path of the current. This ultimately results in one LED flashing and the other not flashing.
 
+Code for Arduino Starter
+```c++
+int buttonPin = 2;     // the number of the pushbutton pin
+int greenLedPin = 4;   // the number of the green LED pin
+int redLedPin = 7;    // the number of the red LED pin
+int buttonState = 0;   // variable for reading the button status
+
+void setup() {
+  pinMode(greenLedPin, OUTPUT);  // the leds are the output
+  pinMode(redLedPin, OUTPUT); 
+  pinMode(buttonPin, INPUT); // button is the input
+}
+
+void loop() {
+  // read the state of the button pin
+  buttonState = digitalRead(buttonPin);
+
+  // when the button is pressed, the pin is HIGH
+  // our condition is checking if our state is equal to HIGH
+  if (buttonState == HIGH) {
+    // action 1 is to turn the led on
+    digitalWrite(greenLedPin, HIGH);  // turn the LED on (HIGH is the voltage level)
+    delay(100);                      // wait for a second
+    digitalWrite(greenLedPin, LOW);   // turn the LED off by making the voltage LOW
+    delay(100);
+
+// when the state is not HIGH, it must be LOW. 
+// in this case we turn the led off.
+  } else {
+    // action 2 is to turn the led off
+    digitalWrite(redLedPin, HIGH);  // turn the LED on (HIGH is the voltage level)
+    delay(100);                      // wait for a second
+    digitalWrite(redLedPin, LOW);   // turn the LED off by making the voltage LOW
+    delay(100);
+  }
+}
+
+
+```
+
+
 ![Samvrat Gowda](/docs/assets/Pullup_Resistor.png)
 
 
