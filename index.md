@@ -112,7 +112,7 @@ Don't forget to place the link of where to buy each component inside the quotati
 
 I chose the Arduino starter project to prepare me for the knee rehabilitation device. It takes a button as the input and the two outputs are the green LED and the red LED. When the button is pressed, the red LED flashes and the green LED flashes when it is unpressed. It uses resistors and jumper wires in order the components to work and make up the final result. The pullup resistor allows the power pin to sense whether the button is pressed or unpressed which will determine the path of the current. This ultimately results in one LED flashing and the other not flashing.
 
-##Code for Arduino Starter
+## Code for Arduino Starter
 ```c++
 int buttonPin = 2;     // the number of the pushbutton pin
 int greenLedPin = 4;   // the number of the green LED pin
