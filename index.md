@@ -138,6 +138,7 @@ I chose the Arduino starter project to prepare me for the knee rehabilitation de
 It is necessary to use a voltage divider to get the LEDs to blink. A voltage divider involves the use of resistors to reduce the voltage in the circuit. The voltage divider is important in the starter project to regulate the amount of voltage the LED is recieving so it does not burn out. The voltage after a voltage divider is given by V<sub>out</sub> = V<sub>in</sub> * R2/(R1 + R2).
 
 ![Samvrat Gowda](/docs/assets/Pullup_Resistor.png)
+
 How a Pullup Resistor Works (https://en.wikipedia.org/wiki/Pull-up_resistor)
 
 ## Code for Arduino Starter
