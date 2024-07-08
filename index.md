@@ -139,7 +139,7 @@ It is necessary to use a voltage divider to get the LEDs to blink. A voltage div
 
 ![Samvrat Gowda](/docs/assets/Pullup_Resistor.png)
 
-How a Pullup Resistor Works (https://en.wikipedia.org/wiki/Pull-up_resistor)
+### How a Pullup Resistor Works (https://en.wikipedia.org/wiki/Pull-up_resistor)
 
 ## Code for Arduino Starter
 ```c++
