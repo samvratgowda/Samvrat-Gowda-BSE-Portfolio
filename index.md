@@ -59,7 +59,7 @@ For your first milestone, describe what your project is and how you plan to buil
 -->
 ## Schematic 
 ![Samvrat Gowda](/docs/assets/FirstMilestone.png)
-_This is a schematic made by Tinkercad of my wiring that uses a flex sensor as an input to trigger a buzzer._
+_Figure 1: This is a schematic made by Tinkercad of my wiring that uses a flex sensor as an input to trigger a buzzer._
 
 ## Code
 <!--
@@ -139,7 +139,7 @@ It is necessary to use a voltage divider to get the LEDs to blink. A voltage div
 
 ![Samvrat Gowda](/docs/assets/Pullup_Resistor.png)
 
-Figure 1: How a Pullup Resistor Works (https://en.wikipedia.org/wiki/Pull-up_resistor)
+_Figure 2: How a Pullup Resistor Works (https://en.wikipedia.org/wiki/Pull-up_resistor)_
 
 ## Code for Arduino Starter
 ```c++
