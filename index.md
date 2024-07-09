@@ -23,25 +23,29 @@ For your final milestone, explain the outcome of your project. Key details to in
 - A summary of key topics you learned about
 - What you hope to learn in the future after everything you've learned at BSE
 
-
+-->
 
 # Second Milestone
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=4RHNaViHJuQ&list=PLe-u_DjFx7evDJ6N_vX36J16ru7SvHV5m&index=35" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
 - Technical details of what you've accomplished and how they contribute to the final goal
 - What has been surprising about the project so far
 - Previous challenges you faced that you overcame
 - What needs to be completed before your final milestone 
--->
+
+The issue this milestone is supposed to solve is signal the user that the knee is moving inward during a squat. The inward movement of the knee is undesirable during the squat as it puts pressure on the knee and causes tension in the hip. In order to signal the user that this is happening, I used an accelerometer to signal that the knee is moving inwards as the Y-axis reading of the accelerometer is in the direction perpendicular to the leg.
+
+The accelerometer is hooked to power, ground, SCL, and SDA. SCL is the serial clock and SDA is serial data and they use Inter-Integrated Circuit (I2C) protocol which allows devices to communicate over short distances. SCL carries a clock signal which is a current that alternates between high and low to maintain voltage. SDA is the line that allows for the transfer of data for communication
+
+One challenging part was the setup of the accelerometer as the example code on the setup instructions for my accelerometer may have not been updated. I had to find an example code on the Arduino IDE which was meant for a different accelerometer but still worked for my accelerometer. Another challenge was the inconsistency of the accelerometer which made it difficult to find values that signal that the knee is moving inwards. The only way to solve this was through trial and error and I eventually found the right values.
+
+The next step for the project is to get my bluetooth module to work, transfer my wiring from my breadboard to the Adafruit ProtoShield, and sew all the components to the knee sleeve.
+
 # First Milestone
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
-
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=jykKqBEpDyc&list=PLe-u_DjFx7evDJ6N_vX36J16ru7SvHV5m&index=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=jykKqBEpDyc&list=PLe-u_DjFx7evDJ6N_vX36J16ru7SvHV5m&index=108" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 My project is a knee rehabilitation device used specifically for squats. The device alerts the user to come up from a squat when their knee is bent 90 degrees. It also alerts the user when their knee is bending inwards during the squat movement as the bending can put stress on the knee joints and potentially the hip and ankle.
 
@@ -60,7 +64,7 @@ For your first milestone, describe what your project is and how you plan to buil
 -->
 ## Schematic 
 ![Samvrat Gowda](/docs/assets/FirstMilestone.png)
-_Figure 1: This is a schematic made by Tinkercad of my wiring that uses a flex sensor as an input to trigger a buzzer._
+_Figure 1: This is a schematic I made using Tinkercad of my wiring that uses a flex sensor as an input to trigger a buzzer._
 
 ## Code
 <!--
@@ -106,7 +110,7 @@ void loop() {
   }
 }
 ```
-# Bill of Materials
+## Bill of Materials
 <!--
 Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
 Don't forget to place the link of where to buy each component inside the quotation marks in the corresponding row after href =. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize this to your project needs. 
