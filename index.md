@@ -29,12 +29,6 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 <iframe width="560" height="315" src="https://www.youtube.com/watch?v=4RHNaViHJuQ&list=PLe-u_DjFx7evDJ6N_vX36J16ru7SvHV5m&index=35" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
-- Technical details of what you've accomplished and how they contribute to the final goal
-- What has been surprising about the project so far
-- Previous challenges you faced that you overcame
-- What needs to be completed before your final milestone 
-
 The issue this milestone is supposed to solve is signal the user that the knee is moving inward during a squat. The inward movement of the knee is undesirable during the squat as it puts pressure on the knee and causes tension in the hip. In order to signal the user that this is happening, I used an accelerometer to signal that the knee is moving inwards as the Y-axis reading of the accelerometer is in the direction perpendicular to the leg.
 
 The accelerometer is hooked to power, ground, SCL, and SDA. SCL is the serial clock and SDA is serial data and they use Inter-Integrated Circuit (I2C) protocol which allows devices to communicate over short distances. SCL carries a clock signal which is a current that alternates between high and low to maintain voltage. SDA is the line that allows for the transfer of data for communication
