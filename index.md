@@ -27,7 +27,7 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 # Second Milestone
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=4RHNaViHJuQ&list=PLe-u_DjFx7evDJ6N_vX36J16ru7SvHV5m&index=35" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4RHNaViHJuQ?si=TuoRljhpImbT1dVw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 The issue this milestone is supposed to solve is signal the user that the knee is moving inward during a squat. The inward movement of the knee is undesirable during the squat as it puts pressure on the knee and causes tension in the hip. In order to signal the user that this is happening, I used an accelerometer to signal that the knee is moving inwards as the Y-axis reading of the accelerometer is in the direction perpendicular to the leg.
 
@@ -324,7 +324,7 @@ void loop() {
 
 # First Milestone
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=jykKqBEpDyc&list=PLe-u_DjFx7evDJ6N_vX36J16ru7SvHV5m&index=108" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jykKqBEpDyc?si=MvhP0gcF03RH9gwV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 My project is a knee rehabilitation device used specifically for squats. The device alerts the user to come up from a squat when their knee is bent 90 degrees. It also alerts the user when their knee is bending inwards during the squat movement as the bending can put stress on the knee joints and potentially the hip and ankle.
 
