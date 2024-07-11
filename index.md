@@ -1,5 +1,5 @@
 # Knee Rehabilitation Device
-The knee rehabilitation device is useful for ensuring the safety of the knee and preventing irritation by correcting a person's form when doing certain exercises. If incorrect form is detected, it emits a high pitched sound and vibration to notify the person that they are doing the exercise with incorrect form. An arduino setup is necessary as the sensor is needed to detect dangerous movements to have the output be the vibrations.
+The knee rehabilitation device is useful for ensuring the safety of the knee and preventing irritation by correcting a person's form when doing certain exercises. If incorrect form is detected, it emits a high pitched sound and vibration to notify the person that they are doing the exercise with incorrect form. An Arduino setup is necessary as the sensor is needed to detect dangerous movements to have the output be the vibrations.
 
 <!--You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:-->
 
@@ -15,13 +15,13 @@ The knee rehabilitation device is useful for ensuring the safety of the knee and
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iCLwPWmPwnw?si=bR2IIqH8gOqL9h_V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-For this milestone, I transferred the wiring from my breadboard to my Adafruit Protoshield V6 by changing the jumper wires to solid core wires and soldering them onto the respective pins. I sewed my arduino and accelerometer onto my knee sleeve. Since the threads are a little thin, it needs a lot of reinforcement so it does not break. I also got my bluetooth module to work after it was not working for my first milestone. The bluetooth module is hooked to the 5V input, ground, RX, and TX. The RX recieves data and sends it to the TX pin.  
+For this milestone, I transferred the wiring from my breadboard to my Adafruit Protoshield V6 by changing the jumper wires to solid core wires and soldering them onto the respective pins. I sewed my Arduino and accelerometer onto my knee sleeve. Since the threads are a little thin, it needs a lot of reinforcement so it does not break. I also got my Bluetooth module to work after it was not working for my first milestone. The Bluetooth module is hooked to the 5V input, ground, RX, and TX. The RX receives data and sends it to the TX pin.  
 
-One of my biggest challenge at BSE was calibrating my accelerometer for the first time since the instructions were not updated for the current Arduino IDE version. Another challenge was that I wasted a few days trying to set up my bluetooth module when in reality, nothing was wrong and it was the inconsistency of the bluetooth module which made it not work at times. Another challenge was sewing my Arduino to my knee sleeve due to the threads being too thin so I had to use a lot of thread to reinforce it.
+One of my biggest challenges at BSE was calibrating my accelerometer for the first time since the instructions were not updated for the current Arduino IDE version. Another challenge was that I wasted a few days trying to set up my Bluetooth module when in reality, nothing was wrong and it was the inconsistency of the Bluetooth module which made it not work at times. Another challenge was sewing my Arduino to my knee sleeve due to the threads being too thin so I had to use a lot of thread to reinforce it.
 
-Coming into this program, I knew very little about circuits and hardware in general as I only focused on coding in the past. At this camp I learned how circuits work along with many components of circuits like voltage dividers. I became familiar with the Arduino and each of its pins including SCL, SDA, RX, and TX. I also learned GitHub and many features on GitHub to make my portfolio look more refined. I learned how to code on the Arduino IDE which was similar to Java in its syntax and features.
+Entering BlueStamp, I knew very little about circuits and hardware in general as I only focused on coding in the past. During my time at BlueStamp I learned how circuits work along with many components of circuits like voltage dividers. I became familiar with the Arduino and each of its pins including SCL, SDA, RX, and TX. I also learned many features on GitHub to make my portfolio look more refined. I learned how to code on the Arduino IDE which uses c++, similar to Java in its syntax and features.
 
-In the future, I hope to have more exposure to mechanical projects which incorporate coding and even artificial intelligence. I would also like to work on something more dynamic like a type of robot that can perform certain tasks.
+In the future, I hope to have more exposure to mechanical projects which incorporate coding and even artificial intelligence. I would also like to work on something more dynamic like a type of robot that can perform certain tasks. I would prefer it be an autonomous robot so I can incorporate artificial intelligence allowing a vast amount of tasks being open to perform by the robot. A humanoid robot would be ideal to perform basic tasks that humans don't like to perform.
 
 ## Code
 <!--
@@ -318,7 +318,7 @@ The accelerometer is hooked to power, ground, SCL, and SDA. SCL is the serial cl
 
 One challenging part was the setup of the accelerometer as the example code on the setup instructions for my accelerometer may have not been updated. I had to find an example code on the Arduino IDE which was meant for a different accelerometer but still worked for my accelerometer. Another challenge was the inconsistency of the accelerometer which made it difficult to find values that signal that the knee is moving inwards. The only way to solve this was through trial and error and I eventually found the right values.
 
-The next step for the project is to get my bluetooth module to work, transfer my wiring from my breadboard to the Adafruit ProtoShield, and sew all the components to the knee sleeve.
+The next step for the project is to get my Bluetooth module to work, transfer my wiring from my breadboard to the Adafruit ProtoShield, and sew all the components to the knee sleeve.
 
 ## Code
 <!--
@@ -635,7 +635,7 @@ Here's where you'll put your code. The syntax below places it into a block of co
 
 ```c++
 const int flexPin = A0;			// Pin connected to voltage divider output
-const int buzzer = 9; //buzzer to arduino pin 9
+const int buzzer = 9; //buzzer to Arduino pin 9
 unsigned long oldmillis;
 float angle;
 
@@ -680,7 +680,7 @@ Don't forget to place the link of where to buy each component inside the quotati
 
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
-| Arduino Uno Rev3 | Uses sensor and accelerometer data to trigger outputs | $27.60 | <a href="https://store-usa.arduino.cc/products/arduino-uno-rev3?gclid=Cj0KCQjwqs6lBhCxARIsAG8YcDiiYxHKGDsX-mF8TC41sUTODtoox7OmWLwUQ-lk6qYo1u2AEEJZtOwaAqwcEALw_wcB"> Link </a> |
+| Arduino Uno Rev3 | Uses sensor and accelerometer data to trigger outputs | $27.60 | <a href="https://store-usa.Arduino.cc/products/Arduino-uno-rev3?gclid=Cj0KCQjwqs6lBhCxARIsAG8YcDiiYxHKGDsX-mF8TC41sUTODtoox7OmWLwUQ-lk6qYo1u2AEEJZtOwaAqwcEALw_wcB"> Link </a> |
 | HC-05 Bluetooth Module | Wireless communication with other devices | $10.39 | <a href="https://www.amazon.com/HiLetgo-Wireless-Bluetooth-Transceiver-Arduino/dp/B071YJG8DR"> Link </a> |
 | Adafruit LSM6DS3TR-C+LIS3MDL Accelerometer | Measures translational and rotational movement of knee | $3.33 | <a href="https://www.adafruit.com/product/5543?gad_source=1&gclid=Cj0KCQjwhb60BhClARIsABGGtw8-jY7wSMWS0FXfzOjqk8mHnPteYpW1C7iLXs6zfJK6qxsxANZ_MVoaAqhWEALw_wcB"> Link </a> |
 | Flex Sensor(4.5”)	 | Measures the bend of the knee | $17.95 | <a href="https://www.sparkfun.com/products/8606"> Link </a> |
@@ -688,8 +688,8 @@ Don't forget to place the link of where to buy each component inside the quotati
 | 5000 mAh Power Bank (10cm x 3 cm)		 | Powers all the components | $17.99 | <a href="https://www.amazon.com/Anker-PowerCore-Ultra-Compact-High-Speed-Technology/dp/B01CU1EC6Y/ref=asc_df_B01CU1EC6Y/?tag=hyprod-20&linkCode=df0&hvadid=312111908612&hvpos=&hvnetw=g&hvrand=17851029625711693156&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9061320&hvtargid=pla-523807968135&psc=1"> Link </a> |
 | Neoprene fabric (2” x 6”)		 | Attaches flex sensor to knee sleeve | $8.49 | <a href="https://www.amazon.com/lychee-Neoprene-Waterproof-Wetsuit-Stretch/dp/B07MCC3968/ref=sr_1_2?crid=2PLYALBAJAEP3&keywords=neoprene+fabric&qid=1689571945&sprefix=neoprene+fabri%2Caps%2C172&sr=8-2"> Link </a> |
 | Sewing Kit	 | Sew all components onto knee sleeve | $6.99 | <a href="https://www.amazon.com/Coquimbo-Traveler-Beginner-Emergency-Organizer/dp/B01G3LOLD6/ref=sr_1_7?crid=27CESEBIVTX3Z&keywords=sewing%2Bkit&qid=1689572065&sprefix=sewing%2Bk%2Caps%2C192&sr=8-7&th=1"> Link </a> |
-| Jumper Wires	 | Wires together electrical components | $2.33 | <a href="https://www.amazon.com/Elegoo-EL-CP-004-Multicolored-Breadboard-arduino/dp/B01EV70C78/ref=sr_1_3?crid=1GJIWX8C47LE6&keywords=jumper+wires&qid=1689572180&sprefix=jumper+wire%2Caps%2C200&sr=8-3"> Link </a> |
-| USB Cable for Arduino	 | Connects power source to arduino | $7.00 | <a href="https://www.amazon.com/USB-2-0-Cable-Type-M000006/dp/B013EOQUAW/ref=sr_1_4?keywords=arduino+uno+cable&qid=1689572328&sr=8-4"> Link </a> |
+| Jumper Wires	 | Wires together electrical components | $2.33 | <a href="https://www.amazon.com/Elegoo-EL-CP-004-Multicolored-Breadboard-Arduino/dp/B01EV70C78/ref=sr_1_3?crid=1GJIWX8C47LE6&keywords=jumper+wires&qid=1689572180&sprefix=jumper+wire%2Caps%2C200&sr=8-3"> Link </a> |
+| USB Cable for Arduino	 | Connects power source to Arduino | $7.00 | <a href="https://www.amazon.com/USB-2-0-Cable-Type-M000006/dp/B013EOQUAW/ref=sr_1_4?keywords=Arduino+uno+cable&qid=1689572328&sr=8-4"> Link </a> |
 | PCB Board	 | What the item is used for | $3.43 | <a href="https://www.amazon.com/ELEGOO-Prototype-Soldering-Compatible-Arduino/dp/B072Z7Y19F/ref=sr_1_12_sspa?crid=3OPU9MWHCVIKU&keywords=perf+board&qid=1689572424&sprefix=perf+boar%2Caps%2C174&sr=8-12-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9tdGY&psc=1"> Link </a> |
 | Piezzo Buzzer	 | Buzzer goes off when improper form is detected | $1.33 | <a href="https://www.amazon.com/Stemedu-SFM-20B-Electric-DC3-24V-Continuous/dp/B0BFHBXKND/ref=sr_1_4?crid=61ZO1XM97XPB&keywords=piezo+buzzer&qid=1689572505&sprefix=piezo+buz%2Caps%2C236&sr=8-4"> Link </a> |
 | 10K Ohm Resistor	 | Helps measure flex sensor resistance | $0.55 | <a href="https://www.amazon.com/EDGELEC-Resistor-Tolerance-Resistance-Optional/dp/B07HDGX5LM/ref=sr_1_2_sspa?crid=1QSGTNOJ9ZED&keywords=10k%2Bresistor&qid=1689572640&sprefix=10k%2Bresistor%2Caps%2C173&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1"> Link </a> |
