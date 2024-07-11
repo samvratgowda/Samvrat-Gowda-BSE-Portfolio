@@ -10,26 +10,309 @@ The knee rehabilitation device is useful for ensuring the safety of the knee and
 
 ![Samvrat Gowda](/docs/assets/Samvrat_G.jpg)
   
-<!--
+
 # Final Milestone
 
-Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iCLwPWmPwnw?si=bR2IIqH8gOqL9h_V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+For this milestone, I transferred the wiring from my breadboard to my Adafruit Protoshield V6 by changing the jumper wires to solid core wires and soldering them onto the respective pins. I sewed my arduino and accelerometer onto my knee sleeve. Since the threads are a little thin, it needs a lot of reinforcement so it does not break. I also got my bluetooth module to work after it was not working for my first milestone. The bluetooth module is hooked to the 5V input, ground, RX, and TX. The RX recieves data and sends it to the TX pin.  
 
-For your final milestone, explain the outcome of your project. Key details to include are:
-- What you've accomplished since your previous milestone
-- What your biggest challenges and triumphs were at BSE
-- A summary of key topics you learned about
-- What you hope to learn in the future after everything you've learned at BSE
+One of my biggest challenge at BSE was calibrating my accelerometer for the first time since the instructions were not updated for the current Arduino IDE version. Another challenge was that I wasted a few days trying to set up my bluetooth module when in reality, nothing was wrong and it was the inconsistency of the bluetooth module which made it not work at times. Another challenge was sewing my Arduino to my knee sleeve due to the threads being too thin so I had to use a lot of thread to reinforce it.
 
+Coming into this program, I knew very little about circuits and hardware in general as I only focused on coding in the past. At this camp I learned how circuits work along with many components of circuits like voltage dividers. I became familiar with the Arduino and each of its pins including SCL, SDA, RX, and TX. I also learned GitHub and many features on GitHub to make my portfolio look more refined. I learned how to code on the Arduino IDE which was similar to Java in its syntax and features.
+
+In the future, I hope to have more exposure to mechanical projects which incorporate coding and even artificial intelligence. I would also like to work on something more dynamic like a type of robot that can perform certain tasks.
+
+## Code
+<!--
+Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 -->
+
+```c++
+// SPDX-FileCopyrightText: 2020 Kattni Rembor for Adafruit Industries
+//
+// SPDX-License-Identifier: MIT
+
+// Basic demo for accelerometer, gyro, and magnetometer readings
+// from the following Adafruit ST Sensor combo boards:
+// * LSM6DSOX + LIS3MDL FeatherWing : https://www.adafruit.com/product/4565
+// * ISM330DHCX + LIS3MDL FeatherWing https://www.adafruit.com/product/4569
+// * LSM6DSOX + LIS3MDL Breakout : https://www.adafruit.com/product/4517
+// * LSM6DS33 + LIS3MDL Breakout Lhttps://www.adafruit.com/product/4485
+
+// #include <Adafruit_LSM6DSOX.h>
+// Adafruit_LSM6DSOX lsm6ds;
+
+// To use with the LSM6DS33+LIS3MDL breakout, uncomment these two lines
+// and comment out the lines referring to the LSM6DSOX above
+//#include <Adafruit_LSM6DS33.h>
+//Adafruit_LSM6DS33 lsm6ds;
+
+// To use with the ISM330DHCX+LIS3MDL Feather Wing, uncomment these two lines
+// and comment out the lines referring to the LSM6DSOX above
+//#include <Adafruit_ISM330DHCX.h>
+//Adafruit_ISM330DHCX lsm6ds;
+
+// To use with the LSM6D3TR-C+LIS3MDL breakout, uncomment these two lines
+// and comment out the lines referring to the LSM6DSOX above
+#include <Adafruit_LSM6DS3TRC.h>
+Adafruit_LSM6DS3TRC lsm6ds;
+
+#include <Adafruit_LIS3MDL.h>
+Adafruit_LIS3MDL lis3mdl;
+
+sensors_event_t accel, gyro, mag, temp;
+
+int buzzer = 9;
+
+void setup(void) {
+  Serial.begin(115200);
+  while (!Serial)
+    delay(10); // will pause Zero, Leonardo, etc until serial console opens
+
+  Serial.println("Adafruit LSM6DS+LIS3MDL test!");
+
+  bool lsm6ds_success, lis3mdl_success;
+
+  // hardware I2C mode, can pass in address & alt Wire
+
+  lsm6ds_success = lsm6ds.begin_I2C();
+  lis3mdl_success = lis3mdl.begin_I2C();
+
+  if (!lsm6ds_success){
+    Serial.println("Failed to find LSM6DS chip");
+  }
+  if (!lis3mdl_success){
+    Serial.println("Failed to find LIS3MDL chip");
+  }
+  if (!(lsm6ds_success && lis3mdl_success)) {
+    while (1) {
+      delay(10);
+    }
+  }
+
+  Serial.println("LSM6DS and LIS3MDL Found!");
+
+  // lsm6ds.setAccelRange(LSM6DS_ACCEL_RANGE_2_G);
+  Serial.print("Accelerometer range set to: ");
+  switch (lsm6ds.getAccelRange()) {
+  case LSM6DS_ACCEL_RANGE_2_G:
+    Serial.println("+-2G");
+    break;
+  case LSM6DS_ACCEL_RANGE_4_G:
+    Serial.println("+-4G");
+    break;
+  case LSM6DS_ACCEL_RANGE_8_G:
+    Serial.println("+-8G");
+    break;
+  case LSM6DS_ACCEL_RANGE_16_G:
+    Serial.println("+-16G");
+    break;
+  }
+
+  // lsm6ds.setAccelDataRate(LSM6DS_RATE_12_5_HZ);
+  Serial.print("Accelerometer data rate set to: ");
+  switch (lsm6ds.getAccelDataRate()) {
+  case LSM6DS_RATE_SHUTDOWN:
+    Serial.println("0 Hz");
+    break;
+  case LSM6DS_RATE_12_5_HZ:
+    Serial.println("12.5 Hz");
+    break;
+  case LSM6DS_RATE_26_HZ:
+    Serial.println("26 Hz");
+    break;
+  case LSM6DS_RATE_52_HZ:
+    Serial.println("52 Hz");
+    break;
+  case LSM6DS_RATE_104_HZ:
+    Serial.println("104 Hz");
+    break;
+  case LSM6DS_RATE_208_HZ:
+    Serial.println("208 Hz");
+    break;
+  case LSM6DS_RATE_416_HZ:
+    Serial.println("416 Hz");
+    break;
+  case LSM6DS_RATE_833_HZ:
+    Serial.println("833 Hz");
+    break;
+  case LSM6DS_RATE_1_66K_HZ:
+    Serial.println("1.66 KHz");
+    break;
+  case LSM6DS_RATE_3_33K_HZ:
+    Serial.println("3.33 KHz");
+    break;
+  case LSM6DS_RATE_6_66K_HZ:
+    Serial.println("6.66 KHz");
+    break;
+  }
+
+  // lsm6ds.setGyroRange(LSM6DS_GYRO_RANGE_250_DPS );
+  Serial.print("Gyro range set to: ");
+  switch (lsm6ds.getGyroRange()) {
+  case LSM6DS_GYRO_RANGE_125_DPS:
+    Serial.println("125 degrees/s");
+    break;
+  case LSM6DS_GYRO_RANGE_250_DPS:
+    Serial.println("250 degrees/s");
+    break;
+  case LSM6DS_GYRO_RANGE_500_DPS:
+    Serial.println("500 degrees/s");
+    break;
+  case LSM6DS_GYRO_RANGE_1000_DPS:
+    Serial.println("1000 degrees/s");
+    break;
+  case LSM6DS_GYRO_RANGE_2000_DPS:
+    Serial.println("2000 degrees/s");
+    break;
+  case ISM330DHCX_GYRO_RANGE_4000_DPS:
+    Serial.println("4000 degrees/s");
+    break;
+  }
+  // lsm6ds.setGyroDataRate(LSM6DS_RATE_12_5_HZ);
+  Serial.print("Gyro data rate set to: ");
+  switch (lsm6ds.getGyroDataRate()) {
+  case LSM6DS_RATE_SHUTDOWN:
+    Serial.println("0 Hz");
+    break;
+  case LSM6DS_RATE_12_5_HZ:
+    Serial.println("12.5 Hz");
+    break;
+  case LSM6DS_RATE_26_HZ:
+    Serial.println("26 Hz");
+    break;
+  case LSM6DS_RATE_52_HZ:
+    Serial.println("52 Hz");
+    break;
+  case LSM6DS_RATE_104_HZ:
+    Serial.println("104 Hz");
+    break;
+  case LSM6DS_RATE_208_HZ:
+    Serial.println("208 Hz");
+    break;
+  case LSM6DS_RATE_416_HZ:
+    Serial.println("416 Hz");
+    break;
+  case LSM6DS_RATE_833_HZ:
+    Serial.println("833 Hz");
+    break;
+  case LSM6DS_RATE_1_66K_HZ:
+    Serial.println("1.66 KHz");
+    break;
+  case LSM6DS_RATE_3_33K_HZ:
+    Serial.println("3.33 KHz");
+    break;
+  case LSM6DS_RATE_6_66K_HZ:
+    Serial.println("6.66 KHz");
+    break;
+  }
+
+  lis3mdl.setDataRate(LIS3MDL_DATARATE_155_HZ);
+  // You can check the datarate by looking at the frequency of the DRDY pin
+  Serial.print("Magnetometer data rate set to: ");
+  switch (lis3mdl.getDataRate()) {
+    case LIS3MDL_DATARATE_0_625_HZ: Serial.println("0.625 Hz"); break;
+    case LIS3MDL_DATARATE_1_25_HZ: Serial.println("1.25 Hz"); break;
+    case LIS3MDL_DATARATE_2_5_HZ: Serial.println("2.5 Hz"); break;
+    case LIS3MDL_DATARATE_5_HZ: Serial.println("5 Hz"); break;
+    case LIS3MDL_DATARATE_10_HZ: Serial.println("10 Hz"); break;
+    case LIS3MDL_DATARATE_20_HZ: Serial.println("20 Hz"); break;
+    case LIS3MDL_DATARATE_40_HZ: Serial.println("40 Hz"); break;
+    case LIS3MDL_DATARATE_80_HZ: Serial.println("80 Hz"); break;
+    case LIS3MDL_DATARATE_155_HZ: Serial.println("155 Hz"); break;
+    case LIS3MDL_DATARATE_300_HZ: Serial.println("300 Hz"); break;
+    case LIS3MDL_DATARATE_560_HZ: Serial.println("560 Hz"); break;
+    case LIS3MDL_DATARATE_1000_HZ: Serial.println("1000 Hz"); break;
+  }
+
+  lis3mdl.setRange(LIS3MDL_RANGE_4_GAUSS);
+  Serial.print("Range set to: ");
+  switch (lis3mdl.getRange()) {
+    case LIS3MDL_RANGE_4_GAUSS: Serial.println("+-4 gauss"); break;
+    case LIS3MDL_RANGE_8_GAUSS: Serial.println("+-8 gauss"); break;
+    case LIS3MDL_RANGE_12_GAUSS: Serial.println("+-12 gauss"); break;
+    case LIS3MDL_RANGE_16_GAUSS: Serial.println("+-16 gauss"); break;
+  }
+
+  lis3mdl.setPerformanceMode(LIS3MDL_MEDIUMMODE);
+  Serial.print("Magnetometer performance mode set to: ");
+  switch (lis3mdl.getPerformanceMode()) {
+    case LIS3MDL_LOWPOWERMODE: Serial.println("Low"); break;
+    case LIS3MDL_MEDIUMMODE: Serial.println("Medium"); break;
+    case LIS3MDL_HIGHMODE: Serial.println("High"); break;
+    case LIS3MDL_ULTRAHIGHMODE: Serial.println("Ultra-High"); break;
+  }
+
+  lis3mdl.setOperationMode(LIS3MDL_CONTINUOUSMODE);
+  Serial.print("Magnetometer operation mode set to: ");
+  // Single shot mode will complete conversion and go into power down
+  switch (lis3mdl.getOperationMode()) {
+    case LIS3MDL_CONTINUOUSMODE: Serial.println("Continuous"); break;
+    case LIS3MDL_SINGLEMODE: Serial.println("Single mode"); break;
+    case LIS3MDL_POWERDOWNMODE: Serial.println("Power-down"); break;
+  }
+
+  lis3mdl.setIntThreshold(500);
+  lis3mdl.configInterrupt(false, false, true, // enable z axis
+                          true, // polarity
+                          false, // don't latch
+                          true); // enabled!
+
+}
+void loop() {
+  
+  sensors_event_t accel, gyro, mag, temp;
+
+  //  /* Get new normalized sensor events */
+  lsm6ds.getEvent(&accel, &gyro, &temp);
+  lis3mdl.getEvent(&mag);
+
+  /* Display the results (acceleration is measured in m/s^2) */
+  Serial.print("\t\tAccel X: ");
+  Serial.print(accel.acceleration.x, 4);
+  Serial.print(" \tY: ");
+  Serial.print(accel.acceleration.y, 4);
+  Serial.print(" \tZ: ");
+  Serial.print(accel.acceleration.z, 4);
+  Serial.println(" \tm/s^2 ");
+
+  /* Display the results (rotation is measured in rad/s) */
+  Serial.print("\t\tGyro  X: ");
+  Serial.print(gyro.gyro.x, 4);
+  Serial.print(" \tY: ");
+  Serial.print(gyro.gyro.y, 4);
+  Serial.print(" \tZ: ");
+  Serial.print(gyro.gyro.z, 4);
+  Serial.println(" \tradians/s ");  
+  Serial.println();
+
+  Serial.print("\t\tTemp   :\t\t\t\t\t");
+  Serial.print(temp.temperature);
+  Serial.println(" \tdeg C");
+  Serial.println();
+
+  
+  if (accel.acceleration.z > 9 || accel.acceleration.y > 3 && gyro.gyro.x > 0.5) {    
+      tone(buzzer, 100);
+  } 
+  
+  
+  else {
+    noTone(buzzer);
+  }
+  
+  delay(10);
+
+}
+
+```
 
 # Second Milestone
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4RHNaViHJuQ?si=TuoRljhpImbT1dVw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-The issue this milestone is supposed to solve is signal the user that the knee is moving inward during a squat. The inward movement of the knee is undesirable during the squat as it puts pressure on the knee and causes tension in the hip. In order to signal the user that this is happening, I used an accelerometer to signal that the knee is moving inwards as the Y-axis reading of the accelerometer is in the direction perpendicular to the leg.
+This milestone signals the user that the knee is moving inward during a squat. The inward movement of the knee is undesirable during the squat as it puts pressure on the knee and causes tension in the hip. In order to signal the user that this is happening, I used an accelerometer to signal that the knee is moving inwards as the Y-axis reading of the accelerometer is in the direction perpendicular to the leg.
 
 The accelerometer is hooked to power, ground, SCL, and SDA. SCL is the serial clock and SDA is serial data and they use Inter-Integrated Circuit (I2C) protocol which allows devices to communicate over short distances. SCL carries a clock signal which is a current that alternates between high and low to maintain voltage. SDA is the line that allows for the transfer of data for communication
 
