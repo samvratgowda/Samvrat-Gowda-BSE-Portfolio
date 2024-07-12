@@ -23,6 +23,8 @@ Entering BlueStamp, I knew very little about circuits and hardware in general as
 
 In the future, I hope to have more exposure to mechanical projects which incorporate coding and even artificial intelligence. I would also like to work on something more dynamic like a type of robot that can perform certain tasks. I would prefer it be an autonomous robot so I can incorporate artificial intelligence allowing a vast amount of tasks being open to perform by the robot. A humanoid robot would be ideal to perform basic tasks that humans don't like to perform.
 
+![Samvrat Gowda](/docs/assets/Accelerometer.png)
+_Figure 1: This image shows how an accelerometer and gyroscope work._
 ## Code
 <!--
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
@@ -626,7 +628,7 @@ For your first milestone, describe what your project is and how you plan to buil
 -->
 ## Schematic 
 ![Samvrat Gowda](/docs/assets/FirstMilestone.png)
-_Figure 1: This is a schematic I made using Tinkercad of my wiring that uses a flex sensor as an input to trigger a buzzer._
+_Figure 2: This is a schematic I made using Tinkercad of my wiring that uses a flex sensor as an input to trigger a buzzer._
 
 ## Code
 <!--
@@ -706,7 +708,7 @@ It is necessary to use a voltage divider to get the LEDs to blink. A voltage div
 
 ![Samvrat Gowda](/docs/assets/Pullup_Resistor.png)
 
-_Figure 2: How a Pullup Resistor Works (https://en.wikipedia.org/wiki/Pull-up_resistor)_
+_Figure 3: How a Pullup Resistor Works (https://en.wikipedia.org/wiki/Pull-up_resistor)_
 
 ## Code for Arduino Starter
 ```c++
