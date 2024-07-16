@@ -24,7 +24,9 @@ Entering BlueStamp, I knew very little about circuits and hardware in general as
 In the future, I hope to have more exposure to mechanical projects which incorporate coding and even artificial intelligence. I would also like to work on something more dynamic like a type of robot that can perform certain tasks. I would prefer it be an autonomous robot so I can incorporate artificial intelligence allowing a vast amount of tasks being open to perform by the robot. A humanoid robot would be ideal to perform basic tasks that humans don't like to perform.
 
 ![Samvrat Gowda](/docs/assets/Accelerometer.png)
+
 _Figure 1: This image shows how an accelerometer and gyroscope work._
+
 ## Code
 <!--
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
