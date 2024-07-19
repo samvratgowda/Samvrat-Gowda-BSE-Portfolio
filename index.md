@@ -10,6 +10,17 @@ The knee rehabilitation device is useful for ensuring the safety of the knee and
 
 ![Samvrat Gowda](/docs/assets/Samvrat_G.jpg)
   
+# Modifications
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MNgVjCHLVno?si=rs78wXTQ-2CCXuHz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+For my modifications, I added a squat counter, wall sit timer, and a step counter. The squat counter and wall sit were easy to code because I already had the data to detect a squat. I just needed to add a counter variable which increases everytime the user reaches the bottom of the squat position which is when the z-acceleration is 9.8 meters per second squared. To code the wall sit timer, there is a counter variable which the user sets. I used millis() to count calculate the elapsed time and when the elapsed time is greater than the set timer, the buzzer goes off indicating that the user can stop the exercise. The step counter requires use of the z-acceleration and the y-gyroscope because those are the two values which change the most when one takes a step. 
+
+The biggest challenge for my modifications was the step counter. Using a large delay would cause the buzzer to not go off even when the accelerometer and gyroscope values meet the set values. However, using a small delay would give false positives unless the set values for acceleration and gyroscope were extremely accurate. I settled for the more reliable option which was using the small delay which meant I had to gather a lot of data to find the right z-acceleration and y-gyroscope values to detect a squat. 
+
+If I had more time, I would use computer aided design to 3D print a case for my Arduino Uno and accelerometer. Since the Arduino and its wires are exposed, they are vulnerable to long term issues so having a case would prevent that. It would also be useful to have a case for the accelerometer in along with a strap so the accelerometer is more stable. It would also be easier to put on the device with a strap instead of a whole knee sleeve.
+
+## Code
 
 # Final Milestone
 
@@ -28,6 +39,62 @@ In the future, I hope to have more exposure to mechanical projects which incorpo
 _Figure 1: This image shows how an accelerometer and gyroscope work._
 
 ## Code
+
+```c++
+// SQUAT COUNTER
+void loop() {
+  sensors_event_t accel, gyro, mag, temp;
+
+  /* Get new normalized sensor events */
+  lsm6ds.getEvent(&accel, &gyro, &temp);
+  lis3mdl.getEvent(&mag);
+
+  if (accel.acceleration.z > 8) {
+    tone(buzzer, 100);
+    Serial.println(count);
+    counter++;
+  }
+  delay(500);
+}
+
+// WALL SIT TIMER
+void loop () {
+  int timer = 15;
+  sensors_event_t accel, gyro, mag, temp;
+
+  /* Get new normalized sensor events */
+  lsm6ds.getEvent(&accel, &gyro, &temp);
+  lis3mdl.getEvent(&mag);
+
+  if (accel.acceleration.z > 8) {
+    if (millis() < timer * 1000) {
+    noTone(buzzer);
+    } else {
+    tone(buzzer, 100);
+    }
+  }
+  delay(10);
+}
+
+// STEP COUNTER
+void loop() {
+  sensors_event_t accel, gyro, mag, temp;
+
+  /* Get new normalized sensor events */
+  lsm6ds.getEvent(&accel, &gyro, &temp);
+  lis3mdl.getEvent(&mag);
+
+  if (accel.acceleration.z > 4 && gyro.gyro.y < -1) {
+    counter++;
+    // tone(buzzer, 100);
+    Serial.println(counter);
+    delay(100);
+  } else {
+    noTone(buzzer);
+  }
+  delay(10);
+}
+```
 <!--
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 -->
