@@ -1,5 +1,7 @@
-# Knee Rehabilitation Device
-The knee rehabilitation device is useful for ensuring the safety of the knee and preventing irritation by correcting a person's form when doing certain exercises. If incorrect form is detected, it emits a high pitched sound and vibration to notify the person that they are doing the exercise with incorrect form. An Arduino setup is necessary as the sensor is needed to detect dangerous movements to have the output be the vibrations.
+# Exercise Tracking and Knee Rehabilitation Device
+My project first started as the knee rehabilitation device. The knee rehabilitation device is useful for ensuring the safety of the knee and preventing irritation by correcting a person's form when doing certain exercises. If incorrect form is detected, it emits a high pitched sound and vibration to notify the person that they are doing the exercise with incorrect form. An Arduino setup is necessary as the sensor is needed to detect dangerous movements to have the output be the vibrations.
+
+I built upon the knee rehabilitation device by including a squat counter, wall sit timer, and step counter. Now my overall system tracks knee rehabilitation, squat related exercise, and walking.
 
 <!--You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:-->
 
@@ -14,7 +16,9 @@ The knee rehabilitation device is useful for ensuring the safety of the knee and
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/MNgVjCHLVno?si=rs78wXTQ-2CCXuHz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-For my modifications, I added a squat counter, wall sit timer, and a step counter. The squat counter and wall sit were easy to code because I already had the data to detect a squat. I just needed to add a counter variable which increases everytime the user reaches the bottom of the squat position which is when the z-acceleration is 9.8 meters per second squared. To code the wall sit timer, there is a counter variable which the user sets. I used millis() to count calculate the elapsed time and when the elapsed time is greater than the set timer, the buzzer goes off indicating that the user can stop the exercise. The step counter requires use of the z-acceleration and the y-gyroscope because those are the two values which change the most when one takes a step. 
+I modified my project to include a squat counter, wall sit timer, and a step counter. I made the squat counter and wall sit tracker by building upon the code and data to detect a squat. I added a counter variable which increases every time the user reaches the bottom of the squat position, or  when the z-acceleration is only under the influence of gravity (9.8 meters per second squared). To code the wall sit timer, there is a counter variable which the user sets. I used millis() function to count calculate the elapsed time. When the elapsed time is greater than the set timer, the buzzer goes off indicating that the user can stop the exercise. 
+
+The step counter requires use of the z-acceleration and the y-gyroscope because those are the two values which change the most when one takes a step. See Figure 1 for a visual of how I used the accelerometer data to count steps. I used a similar approach for gyroscope data.
 
 The biggest challenge for my modifications was the step counter. Using a large delay would cause the buzzer to not go off even when the accelerometer and gyroscope values meet the set values. However, using a small delay would give false positives unless the set values for acceleration and gyroscope were extremely accurate. I settled for the more reliable option which was using the small delay which meant I had to gather a lot of data to find the right z-acceleration and y-gyroscope values to detect a squat. 
 
