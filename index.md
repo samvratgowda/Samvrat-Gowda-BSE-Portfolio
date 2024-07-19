@@ -22,12 +22,9 @@ If I had more time, I would use computer aided design to 3D print a case for my 
 
 ## Schematics
 
-![Samvrat Gowda](/docs/assets/Z-Accel.png)
-_Z-Acceleration (m/s^2) vs Time (100ms) Graph_
-
-![Samvrat Gowda](/docs/assets/Y-Gyro.png)
-_Y-Gyroscope (rad/s) vs Time (100ms) Graph_
-
+![Samvrat Gowda](/docs/assets/AccelerometerData.png)
+_Figure 1: Z-Acceleration (m/s^2) vs Time (ms) data in blue. Toe-off is in red and heel strike is in green. Figures of gait cycle from "Lower Extremity Exoskeletons and Active Orthoses: Challenges and State-of-the-Art" by Prof. Dollar and Prof. Herr. 
+ 
 ## Code
 
 ```c++
