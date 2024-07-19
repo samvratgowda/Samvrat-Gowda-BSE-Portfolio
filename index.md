@@ -22,24 +22,6 @@ If I had more time, I would use computer aided design to 3D print a case for my 
 
 ## Code
 
-# Final Milestone
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iCLwPWmPwnw?si=bR2IIqH8gOqL9h_V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-For this milestone, I transferred the wiring from my breadboard to my Adafruit Protoshield V6 by changing the jumper wires to solid core wires and soldering them onto the respective pins. I sewed my Arduino and accelerometer onto my knee sleeve. Since the threads are a little thin, it needs a lot of reinforcement so it does not break. I also got my Bluetooth module to work after it was not working for my first milestone. The Bluetooth module is hooked to the 5V input, ground, RX, and TX. The RX receives data and sends it to the TX pin.  
-
-One of my biggest challenges at BSE was calibrating my accelerometer for the first time since the instructions were not updated for the current Arduino IDE version. Another challenge was that I wasted a few days trying to set up my Bluetooth module when in reality, nothing was wrong and it was the inconsistency of the Bluetooth module which made it not work at times. Another challenge was sewing my Arduino to my knee sleeve due to the threads being too thin so I had to use a lot of thread to reinforce it.
-
-Entering BlueStamp, I knew very little about circuits and hardware in general as I only focused on coding in the past. During my time at BlueStamp I learned how circuits work along with many components of circuits like voltage dividers. I became familiar with the Arduino and each of its pins including SCL, SDA, RX, and TX. I also learned many features on GitHub to make my portfolio look more refined. I learned how to code on the Arduino IDE which uses c++, similar to Java in its syntax and features.
-
-In the future, I hope to have more exposure to mechanical projects which incorporate coding and even artificial intelligence. I would also like to work on something more dynamic like a type of robot that can perform certain tasks. I would prefer it be an autonomous robot so I can incorporate artificial intelligence allowing a vast amount of tasks being open to perform by the robot. A humanoid robot would be ideal to perform basic tasks that humans don't like to perform.
-
-![Samvrat Gowda](/docs/assets/Accelerometer.png)
-
-_Figure 1: This image shows how an accelerometer and gyroscope work._
-
-## Code
-
 ```c++
 // SQUAT COUNTER
 void loop() {
@@ -95,6 +77,25 @@ void loop() {
   delay(10);
 }
 ```
+
+# Final Milestone
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iCLwPWmPwnw?si=bR2IIqH8gOqL9h_V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+For this milestone, I transferred the wiring from my breadboard to my Adafruit Protoshield V6 by changing the jumper wires to solid core wires and soldering them onto the respective pins. I sewed my Arduino and accelerometer onto my knee sleeve. Since the threads are a little thin, it needs a lot of reinforcement so it does not break. I also got my Bluetooth module to work after it was not working for my first milestone. The Bluetooth module is hooked to the 5V input, ground, RX, and TX. The RX receives data and sends it to the TX pin.  
+
+One of my biggest challenges at BSE was calibrating my accelerometer for the first time since the instructions were not updated for the current Arduino IDE version. Another challenge was that I wasted a few days trying to set up my Bluetooth module when in reality, nothing was wrong and it was the inconsistency of the Bluetooth module which made it not work at times. Another challenge was sewing my Arduino to my knee sleeve due to the threads being too thin so I had to use a lot of thread to reinforce it.
+
+Entering BlueStamp, I knew very little about circuits and hardware in general as I only focused on coding in the past. During my time at BlueStamp I learned how circuits work along with many components of circuits like voltage dividers. I became familiar with the Arduino and each of its pins including SCL, SDA, RX, and TX. I also learned many features on GitHub to make my portfolio look more refined. I learned how to code on the Arduino IDE which uses c++, similar to Java in its syntax and features.
+
+In the future, I hope to have more exposure to mechanical projects which incorporate coding and even artificial intelligence. I would also like to work on something more dynamic like a type of robot that can perform certain tasks. I would prefer it be an autonomous robot so I can incorporate artificial intelligence allowing a vast amount of tasks being open to perform by the robot. A humanoid robot would be ideal to perform basic tasks that humans don't like to perform.
+
+![Samvrat Gowda](/docs/assets/Accelerometer.png)
+
+_Figure 1: This image shows how an accelerometer and gyroscope work._
+
+## Code
+
 <!--
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 -->
