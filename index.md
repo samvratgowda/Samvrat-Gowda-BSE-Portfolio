@@ -20,6 +20,14 @@ The biggest challenge for my modifications was the step counter. Using a large d
 
 If I had more time, I would use computer aided design to 3D print a case for my Arduino Uno and accelerometer. Since the Arduino and its wires are exposed, they are vulnerable to long term issues so having a case would prevent that. It would also be useful to have a case for the accelerometer in along with a strap so the accelerometer is more stable. It would also be easier to put on the device with a strap instead of a whole knee sleeve.
 
+## Schematics
+
+![Samvrat Gowda](/docs/assets/Z-Accel.png)
+_Z-Acceleration (m/s^2) vs Time (100ms) Graph_
+
+![Samvrat Gowda](/docs/assets/Y-Gyro.png)
+_Y-Gyroscope (rad/s) vs Time (100ms) Graph_
+
 ## Code
 
 ```c++
