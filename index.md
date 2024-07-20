@@ -10,7 +10,7 @@ I built upon the knee rehabilitation device by including a squat counter, wall s
 | Samvrat G | American High School | Computer Science | Incoming Senior
 
 
-![Samvrat Gowda](/docs/assets/Samvrat_G.jpg)
+![Samvrat Gowda](/docs/assets/Samvrat_G_.jpg)
   
 # Modifications
 
