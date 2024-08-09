@@ -30,7 +30,7 @@ If I had more time, I would use computer aided design to 3D print a case for my 
 _Figure 1: Z-Acceleration (m/s^2) vs Time (ms) data in blue. Toe-off is in red and heel strike is in green. Figures of gait cycle from "Lower Extremity Exoskeletons and Active Orthoses: Challenges and State-of-the-Art" by Prof. Dollar and Prof. Herr._
 
 <details> 
-<summary> **Code: Squat Counter, Wall Sit Timer, Step Counter** </summary>
+<summary> Code: Squat Counter, Wall Sit Timer, Step Counter </summary>
 
 ```c++
 // SQUAT COUNTER
