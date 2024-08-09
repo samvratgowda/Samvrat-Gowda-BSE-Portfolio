@@ -20,7 +20,7 @@ I modified my project to include a squat counter, wall sit timer, and a step cou
 
 The step counter requires use of the z-acceleration and the y-gyroscope because those are the two values which change the most when one takes a step. See Figure 1 for a visual of how I used the accelerometer data to count steps. I used a similar approach for gyroscope data.
 
-The biggest challenge for my modifications was the step counter. Using a large delay would cause the buzzer to not go off even when the accelerometer and gyroscope values meet the set values. However, using a small delay would give false positives unless the set values for acceleration and gyroscope were extremely accurate. I settled for the more reliable option which was using the small delay which meant I had to gather a lot of data to find the right z-acceleration and y-gyroscope values to detect a squat. 
+The biggest challenge for my modifications was the step counter. Using a large delay would cause the buzzer to not go off even when the accelerometer and gyroscope values meet the set values. However, using a small delay would give false positives unless the set values for acceleration and gyroscope were extremely accurate. I settled for the more reliable option which was using the small delay which meant I had to gather a lot of data to find the right z-acceleration and y-gyroscope values to detect a step. 
 
 If I had more time, I would use computer aided design to 3D print a case for my Arduino Uno and accelerometer. Since the Arduino and its wires are exposed, they are vulnerable to long term issues so having a case would prevent that. It would also be useful to have a case for the accelerometer in along with a strap so the accelerometer is more stable. It would also be easier to put on the device with a strap instead of a whole knee sleeve.
 
@@ -28,8 +28,9 @@ If I had more time, I would use computer aided design to 3D print a case for my 
 
 ![Samvrat Gowda](/docs/assets/AccelerometerData.png)
 _Figure 1: Z-Acceleration (m/s^2) vs Time (ms) data in blue. Toe-off is in red and heel strike is in green. Figures of gait cycle from "Lower Extremity Exoskeletons and Active Orthoses: Challenges and State-of-the-Art" by Prof. Dollar and Prof. Herr._
- 
-## Code
+
+<details> 
+<summary> ## Code: Squat Counter, Wall Sit Timer, Step Counter</summary>
 
 ```c++
 // SQUAT COUNTER
@@ -86,6 +87,7 @@ void loop() {
   delay(10);
 }
 ```
+</details>
 
 # Final Milestone
 
@@ -101,9 +103,9 @@ In the future, I hope to have more exposure to mechanical projects which incorpo
 
 ![Samvrat Gowda](/docs/assets/Accelerometer.png)
 
-_Figure 1: This image shows how an accelerometer and gyroscope work._
+_Figure 2: This image shows how an accelerometer and gyroscope work._
 
-## Code
+## Code to Detect Improper Form 
 
 <!--
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
@@ -401,7 +403,7 @@ One challenging part was the setup of the accelerometer as the example code on t
 
 The next step for the project is to get my Bluetooth module to work, transfer my wiring from my breadboard to the Adafruit ProtoShield, and sew all the components to the knee sleeve.
 
-## Code
+## Code for Squat Detection (Accelerometer)
 <!--
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 -->
@@ -707,9 +709,9 @@ For your first milestone, describe what your project is and how you plan to buil
 -->
 ## Schematic 
 ![Samvrat Gowda](/docs/assets/FirstMilestone.png)
-_Figure 2: This is a schematic I made using Tinkercad of my wiring that uses a flex sensor as an input to trigger a buzzer._
+_Figure 3: This is a schematic I made using Tinkercad of my wiring that uses a flex sensor as an input to trigger a buzzer._
 
-## Code
+## Code for Squat Detection (Flex Sensor)
 <!--
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 -->
@@ -787,7 +789,7 @@ It is necessary to use a voltage divider to get the LEDs to blink. A voltage div
 
 ![Samvrat Gowda](/docs/assets/Pullup_Resistor.png)
 
-_Figure 3: How a Pullup Resistor Works (https://en.wikipedia.org/wiki/Pull-up_resistor)_
+_Figure 4: How a Pullup Resistor Works (https://en.wikipedia.org/wiki/Pull-up_resistor)_
 
 ## Code for Arduino Starter
 ```c++
